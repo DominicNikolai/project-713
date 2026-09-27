@@ -4,23 +4,22 @@ const line =
 ---
 
 <svg
-  id="line"
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 521 2399"
-  stroke-linecap="round"
-  stroke-miterlimit="1"
+  id='line'
+  xmlns='http://www.w3.org/2000/svg'
+  viewBox='0 0 521 2399'
+  stroke-linecap='round'
+  stroke-miterlimit='1'
   style={`--line-path: "${line}"`}
 >
-  <path id="line-base" d={line} fill="none" stroke="#ccc" stroke-width="5" />
+  <path id='line-base' d={line} fill='none' stroke='#ccc' stroke-width='5'></path>
   <path
-    class="line-running"
-    pathLength="1"
+    class='line-running'
+    pathLength='1'
     d={line}
-    fill="none"
-    stroke="#000"
-    stroke-width="5"
-  />
-  <circle class="line-circle" cx="176.22" cy="80" r="5" fill="red" />
+    fill='none'
+    stroke='#000'
+    stroke-width='5'></path>
+  <circle class='line-circle' cx='176.22' cy='80' r='5' fill='red'></circle>
 </svg>
 
 <style is:global>
