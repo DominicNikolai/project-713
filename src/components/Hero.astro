@@ -1,0 +1,74 @@
+---
+const line =
+  'M176.22,79v71c0,27.58,7.16,33.5,18.45,42.46,11.87,9.41,26.87,9.95,38.55,9.86l35.21,0A44.78,44.78,0,0,1,301.7,217.7c13.1,13.3,12.13,29.54,12.13,40.89V289.7s1,48.43,1,61.43c0,29.35-26.8,31.3-32.47,31.3h-169c-38.09,0-54,28.18-54,60.53V734.87c0,19.56,17.73,29.6,37.82,29.8s100.7-.58,100.7-.58c24.78,0,30.85,17.48,30.85,24.52.11,10.26.22,16.61.32,26.87,0,22.69,19.18,28.5,28.5,28.5h30.59c45.91,0,71.22,36.45,71.22,66.72v63.91c0,37.82-27.92,77.22-81.13,77.22-42,0-71.62,28.69-71.62,82.83,0,25.3-.64,49.86-.64,82.82';
+---
+
+<svg
+  id="line"
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 521 2399"
+  stroke-linecap="round"
+  stroke-miterlimit="1"
+  style={`--line-path: "${line}"`}
+>
+  <path id="line-base" d={line} fill="none" stroke="#ccc" stroke-width="5" />
+  <path
+    class="line-running"
+    pathLength="1"
+    d={line}
+    fill="none"
+    stroke="#000"
+    stroke-width="5"
+  />
+  <circle class="line-circle" cx="176.22" cy="80" r="5" fill="red" />
+</svg>
+
+<style is:global>
+  body {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #line {
+    margin-right: 100px;
+    max-width: 700px;
+    overflow-x: clip;
+    min-height: 300vh;
+  }
+
+  .line-circle {
+    transform-box: fill-box;
+    offset-anchor: 50% 50%;
+    offset-path: path(var(--line-path));
+    animation: move 5s forwards linear;
+    animation-timeline: scroll();
+    animation-range-start: 2%;
+    animation-range-end: 50%;
+  }
+
+  @keyframes move {
+    to {
+      offset-distance: 100%;
+    }
+  }
+
+  .line-running {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: line-animation 5s linear forwards;
+    animation-timeline: scroll();
+    animation-range-start: 2%;
+    animation-range-end: 50%;
+  }
+
+  @keyframes line-animation {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+</style>
