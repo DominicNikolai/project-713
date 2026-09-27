@@ -14,11 +14,7 @@ img {
 }
 
 :root {
-  --gradient-btn: linear-gradient(
-    to bottom,
-    #00f,
-    black
-  );
+  --gradient-btn: linear-gradient(to bottom, #00f, black);
 }
 
 button {
@@ -39,17 +35,14 @@ body {
   height: max-content;
   width: 100%;
   flex-direction: column;
+  --sb-track-color: #000;
+  --sb-thumb-color: var(--gradient-btn);
+  --sb-size: 0.7vmax;
 }
 
 h1,
 h2 {
   font-family: 'AnotherDanger';
-}
-
-body {
-  --sb-track-color: #000;
-  --sb-thumb-color: var(--gradient-btn);
-  --sb-size: 0.7vmax;
 }
 
 /***************************SCROLL***************************/
